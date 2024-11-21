@@ -1,4 +1,13 @@
-app = ''
+# fly.toml app configuration file generated for python-django on 2024-11-19T19:22:39-05:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'python-django'
+primary_region = 'yyz'
+console_command = '/code/manage.py shell'
+
+[build]
 
 [env]
   PORT = '8000'
@@ -6,7 +15,7 @@ app = ''
 [http_service]
   internal_port = 8000
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
